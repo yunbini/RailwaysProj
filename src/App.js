@@ -1,24 +1,63 @@
 import logo from './logo.svg';
 import './App.css';
+import backgroundImage from '../src/assets/images/railsbackground.png';
+import check from '../src/assets/images/check.png';
+import banner from '../src/assets/images/banner.png';
+import sample from '../src/assets/images/sample.png';
+import upload from '../src/assets/images/upload.png';
+
+import styled from 'styled-components';
+import MainBox from './Components/MainBox';
+import PhotoUploader from './Components/PhotoUploader';
+
+const BackImg = styled.div`
+    background-image:url(${backgroundImage});
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-size:1920px 1080px;
+    padding:0px 360px;
+
+    height:100vw;
+`
+const StyledDiv = styled.div`
+    display:flex; justify-content:center;`
+const CheckBox = styled.div`
+  display:flex;
+  margin:16px 0px 35.54px 0px;
+`
+const StyledP = styled.p`
+  font-size:18px;
+  color:#767676;
+  margin:0;
+  font-family:var(--font-regular);
+  display:flex;
+  align-items: center;
+`
+const CheckImg = styled.img`
+  width:28.35px; height:28.35px;
+  margin-right:16px;
+`
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BackImg>
+      <StyledDiv>
+        <img src={sample} style={{width:'420.59px', height:'94.58px', margin:'63px 0px 70.42px 0px'}}></img>
+      </StyledDiv>
+      <StyledDiv>
+          <MainBox text='이미지 업로드' ImgBox={upload}></MainBox>
+          <MainBox text='이상감지' ImgBox={upload}></MainBox>
+      </StyledDiv>
+      <CheckBox>
+        <CheckImg src={check}></CheckImg>
+        <StyledP>이미지를 업로드하시면 서비스 약관에 동의하시는 것으로 간주하며, 철도로잉의 개인정보 처리방침 및 서비스 이용약관이 적용됩니다.</StyledP>
+      </CheckBox>
+      <img src={banner} style={{width:'1200px', height:'98px'}}></img>
+
+      <PhotoUploader></PhotoUploader>
+      </BackImg>
+      
   );
 }
 
