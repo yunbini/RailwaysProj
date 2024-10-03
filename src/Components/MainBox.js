@@ -2,6 +2,8 @@ import React, { useCallback,useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styled from "styled-components";
 import axios from 'axios';
+import {useSelector,useDispatch} from "react-redux";
+import ResultBox from './ResultBox';
 
 
 const StyledDiv = styled.div`
@@ -27,6 +29,16 @@ const MainImg = styled.img`
 `
 function MainBox({text,firstImg,secImg}){
 
+    // let result = useSelector((state) => ({
+    //     // checkedMenus: state.checkedMenus,
+    //     // orderPrice: state.orderPrice,
+    //     // orderAmount: state.orderAmount
+    //     result: state.result
+        
+    // }));
+
+    // let dispatch = useDispatch();
+
     const onDrop = useCallback(async(acceptedFiles) => {
         console.log(acceptedFiles); // 업로드된 파일 리스트
         // 파일을 서버로 전송하거나, 로컬에 미리보기로 표시할 수 있습니다.
@@ -36,16 +48,18 @@ function MainBox({text,firstImg,secImg}){
         });
 
         try {
-            const response = await axios.post('https://a2e7-34-80-242-39.ngrok-free.app/', formData, {
+            const response = await axios.post('https://wxxnxx.pythonanywhere.com/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
             console.log(response);
             alert('파일 업로드 성공');
+            // dispatch(complete());
         } catch (error) {
             console.error(error);
             alert('파일 업로드 실패');
+            // dispatch(disorder());
         }
     }, []);
     
