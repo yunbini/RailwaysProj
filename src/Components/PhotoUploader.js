@@ -31,9 +31,9 @@ function PhotoUploader() {
     <DropZoneContainer {...getRootProps()}>
       <input {...getInputProps()} />
       {isDragActive ? (
-        <UploadMessage>Drop the files here...</UploadMessage>
+        <UploadMessage>Drop the files here...</UploadMessage> // 드래그 해서 올려놓았을 때
       ) : (
-        <UploadMessage>Drag & drop some images here, or click to select files</UploadMessage>
+        <UploadMessage>Drag & drop some images here, or click to select files</UploadMessage> // 드래그 하기 전
       )}
     </DropZoneContainer>
   );
