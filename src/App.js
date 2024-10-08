@@ -48,7 +48,7 @@ function App() {
       </StyledDiv>
       <StyledDiv>
           <MainBox text='이미지 업로드' firstImg={upload} secImg={hover}></MainBox>
-          <ResultBox text='이상감지'></ResultBox>
+          <ResultBox text='이상감지' beforeImg={before} ></ResultBox>
       </StyledDiv>
       <CheckBox>
         <CheckImg src={check}></CheckImg>

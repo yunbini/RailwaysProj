@@ -48,7 +48,7 @@ function MainBox({text,firstImg,secImg}){
         });
 
         try {
-            const response = await axios.post('https://wxxnxx.pythonanywhere.com/', formData, {
+            const response = await axios.post('https://sozerong.pythonanywhere.com/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -77,6 +77,7 @@ function MainBox({text,firstImg,secImg}){
            )}
            {/* <MainImg src={beforeImg}></MainImg> */}
         </StyledDiv>
+           
     )
 }
 export default MainBox;

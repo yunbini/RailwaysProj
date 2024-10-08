@@ -12,7 +12,6 @@ const StyledDiv = styled.div`
     margin:5px;
     position:relative;
     font-family:var(--font-bold);
-    cursor:pointer;
 `
 const StyledText = styled.p`
     font-size:22px; color:#FFFFFF;
@@ -24,13 +23,13 @@ const StyledText = styled.p`
 const MainImg = styled.img`
     width:592px; height:450px;
 `
-function ResultBox({text}){
+function ResultBox({text,beforeImg}){
 
 
     return(
         <StyledDiv>
            <StyledText>{text}</StyledText>
-           <MainImg src={text}></MainImg>
+           <MainImg src={beforeImg}></MainImg>
         </StyledDiv>
     )
 }
